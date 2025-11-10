@@ -29,7 +29,7 @@ La extensión de Chrome que te da **control total y libertad absoluta** sobre Ne
 
 ## 📖 Sobre el Proyecto
 *  **Netflix Freedom** es una extensión para Chrome y navegadores basados en Chromium (Edge, Ópera, Vivaldi...)
-*  Acceder a Netflix gratis usando códigos ID de sesión generados por la extensión complementaria **Netflix Session Creator**.
+*  **Accede a Netflix gratis** usando códigos ID de sesión generados por la extensión **Netflix Session Creator**.
 *  **Netflix Session Creator** no se puede instalar, es para uso exclusivo del creador.
 ---
 
