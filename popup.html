@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Netflix Access Freedom</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body {
+  width: 300px;
+  padding: 15px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #000000; /* Fondo totalmente negro */
+  color: #ffffff;
+  overflow: hidden;
+}
+.container {
+  width: 100%;
+}
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.netflix-logo {
+  font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: #E50914;
+  letter-spacing: -1px;
+  text-shadow: 0 0 10px rgba(229, 9, 20, 0.7);
+  animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #E50914, 0 0 10px #E50914;
+  }
+  to {
+    text-shadow: 0 0 10px #E50914, 0 0 20px #E50914;
+  }
+}
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 600;
+}
+.button {
+  border: none;
+  padding: 14px;
+  margin: 8px 0;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+.button-green {
+  background: linear-gradient(135deg, #E50914, #b20710);
+  color: white;
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.5);
+}
+.button-green:hover {
+  background: linear-gradient(135deg, #f40612, #d10810);
+  box-shadow: 0 6px 20px rgba(229, 9, 20, 0.7);
+  transform: translateY(-2px);
+}
+.button-green:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(229, 9, 20, 0.4);
+}
+.button-green:disabled {
+  background: #333333;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+.netflix-badge {
+  display: inline-block;
+  background: #E50914;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-left: 8px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(229, 9, 20, 0.3);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+.button:hover::before {
+  left: 100%;
+}
+.input-wrapper {
+  position: relative;
+  margin-bottom: 8px;
+}
+input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #333333;
+  border-radius: 8px;
+  background-color: #111111;
+  color: #ffffff;
+  box-sizing: border-box;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+input:focus {
+  outline: none;
+  border-color: #E50914;
+  background-color: #1a1a1a;
+  box-shadow: 0 0 8px rgba(229, 9, 20, 0.3);
+}
+.input-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #E50914;
+  transition: width 0.3s;
+}
+.input-wrapper:focus-within::after {
+  width: 100%;
+}
+h2 {
+  color: #E50914;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.credit {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #333333;
+  font-size: 12px;
+  color: #b3b3b3;
+}
+.credit a {
+  color: #E50914;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.credit a:hover {
+  color: #ff0a16;
+  text-decoration: underline;
+}
+.section {
+  margin-bottom: 25px;
+  background: #111111;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border: 1px solid #222222;
+  position: relative;
+  overflow: hidden;
+}
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #E50914, transparent);
+}
+.decorative-icon {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 60px;
+  color: rgba(229, 9, 20, 0.1);
+  transform: rotate(15deg);
+  z-index: 0;
+}
+/* Efecto de partículas de fondo */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle, #E50914 1px, transparent 1px),
+    radial-gradient(circle, #E50914 1px, transparent 1px);
+  background-size: 50px 50px, 80px 80px;
+  background-position: 0 0, 25px 25px;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+/* --- ESTILOS PARA EL RESUMEN DE CARACTERÍSTICAS --- */
+.summary-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+.summary-card h3 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #E50914;
+  text-align: center;
+}
+.summary-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.summary-card li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #e0e0e0;
+}
+.summary-card li:last-child {
+  margin-bottom: 0;
+}
+.summary-card li i {
+  color: #E50914;
+  width: 20px; /* Ancho fijo para alinear el texto */
+  margin-right: 10px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">
+      <div class="netflix-logo">NETFLIX</div>
+    </div>
+    <h1>Access Freedom</h1>
+  </header>
+  
+  <div class="section">
+    <i class="fas fa-play decorative-icon"></i>
+    <h2>Entrar a Netflix</h2>
+    <div class="input-wrapper">
+      <input type="text" id="full-code-input" placeholder="Introducir ID de acceso" autocomplete="off">
+    </div>
+    <button id="restore-session" class="button button-green">
+      Acceso a <span class="netflix-badge">Netflix</span>
+    </button>
+  </div>
+
+  <!-- NUEVA SECCIÓN DE RESUMEN -->
+  <div class="summary-card">
+    <h3>Características Clave</h3>
+    <ul>
+      <li><i class="fas fa-key"></i> Acceso instantáneo con un código</li>
+      <li><i class="fas fa-shield-alt"></i> Bypass automático de restricciones</li>
+      <li><i class="fas fa-gamepad"></i> Control mejorado del reproductor</li>
+      <li><i class="fas fa-user-shield"></i> Protección contra cierres de sesión</li>
+    </ul>
+  </div>
+  
+  <div class="credit">
+    BY DANIPRO PREMIUM |
+    <a href="https://premium-id.jimdosite.com" target="_blank">premium-id.jimdosite.com</a>
+  </div>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>
