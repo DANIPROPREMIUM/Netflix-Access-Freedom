@@ -11,7 +11,7 @@ La extensión de Chrome que te da **control total y libertad absoluta** sobre Ne
 
 ### 📸 Vista Previa de las Funciones
 
-| Acceso gratis con Código | Crea Sesiones ID (extensión exclusiva por el dueño y creador)  |
+| Acceso gratis con Código | Crea Sesiones ID (extensión exclusiva para el creador)  |
 | :---: | :---: |
 | ![Image](https://github.com/user-attachments/assets/43a2cf83-ab8e-411c-9f7c-cd59cdb8ce44) | ![Image](https://github.com/user-attachments/assets/5b7f9856-9e82-4e88-b1b3-e12b85cd9911) |
 
