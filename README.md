@@ -8,6 +8,15 @@
 La extensión de Chrome que te da **control total y libertad absoluta** sobre Netflix.
 
 ---
+# 💎 Cuentas Premium Gratis 💎
+
+### Acceso gratuito al instante a mis cuentas premium de streaming compartidas con un código (ID).
+### 🤍  AtresPlayer  🧡 Crunchyroll  💜 Rakuten Viki  💙 Prime video  💗 PornHub  💙 Paramount+  ❤️‍🔥 Netflix   
+-
+👇 **Únete a nuestro grupo de Telegram para obtener las cuentas al instante.**
+
+[![GRUPO TELEGRAM - CUENTAS PREMIUM GRATIS](https://img.shields.io/badge/GRUPO%20TELEGRAM-CUENTAS%20PREMIUM%20GRATIS-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/cuentaspremiumid) 
+---
 
 ### 📸 Vista Previa de las Funciones
 
