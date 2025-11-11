@@ -38,7 +38,7 @@
 
 ### 📸 Vista Previa de las Funciones
 
-| Acceso gratis con Código | Crea Sesiones ID (extensión exclusiva para el creador)  |
+| Acceso gratis con Código ID | Crea Sesiones ID (extensión exclusiva para el creador)  |
 | :---: | :---: |
 | ![Image](https://github.com/user-attachments/assets/43a2cf83-ab8e-411c-9f7c-cd59cdb8ce44) | ![Image](https://github.com/user-attachments/assets/5b7f9856-9e82-4e88-b1b3-e12b85cd9911) |
 
@@ -47,7 +47,7 @@
 
 ## ✨ Características Clave
 
-*   🔑 **Acceso instantáneo con un código**: Entra a Netflix en un clic. Olvídate de contraseñas.
+*   🔑 **Acceso instantáneo con un código ID**: Entra a Netflix en un clic. Olvídate de contraseñas.
 *   🛡️ **Bypass automático de restricciones**: Omite límites de dispositivos y bloqueos geográficos sin esfuerzo.
 *   🎮 **Control mejorado del reproductor**: Personaliza tu experiencia con velocidad ajustable, saltos precisos y más.
 *   🔒 **Protección contra cierres de sesión**: Tu sesión, segura e ininterrumpida. Protegemos tu acceso 24/7.
