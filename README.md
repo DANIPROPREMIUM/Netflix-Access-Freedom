@@ -1,11 +1,29 @@
-# Netflix Access Freedom 
+<!-- ======================================= -->
+<!--     CABECERA PRINCIPAL DEL PROYECTO     -->
+<!-- ======================================= -->
 
-![Netflix Logo](https://img.shields.io/badge/Netflix-E50914?style=for-the-badge&logo=netflix&logoColor=white)
-![Chrome Extension](https://img.shields.io/badge/Chrome-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)
-![Version](https://img.shields.io/badge/Version-5.0-green?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+<!-- Título Principal -->
+<h1 align="center">Netflix Access Freedom</h1>
 
-La extensión de Chrome que te da **control total y libertad absoluta** sobre Netflix.
+<!-- Imagen Principal (Screenshot o Logo) -->
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ba681106-679a-47c8-a819-0c8754fd9798" width="70%" alt="Screenshot de la extensión Netflix Access Freedom">
+</p>
+
+<!-- Botón de Acción Principal -->
+<p align="center">
+  <a href="https://t.me/cuentaspremiumid">
+    <img src="https://img.shields.io/badge/GRUPO%20TELEGRAM-CUENTAS%20GRATIS-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Grupo de Telegram">
+  </a>
+</p>
+
+<!-- Badges de Información del Proyecto -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Netflix-E50914?style=for-the-badge&logo=netflix&logoColor=white" alt="Netflix">
+  <img src="https://img.shields.io/badge/Chrome-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Chrome Extension">
+  <img src="https://img.shields.io/badge/Version-5.0-green?style=for-the-badge" alt="Version">
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License">
+</p>
 
 ---
 ## 💎 Cuentas Premium Gratis por Código ID 💎
@@ -45,7 +63,11 @@ La extensión de Chrome que te da **control total y libertad absoluta** sobre Ne
 ## 🚀 Instalación
 
 1. **Descarga el archivo ZIP** de este repositorio y pones la carpeta fuera del ZIP:
-2. **Click aquí**:(https://codeload.github.com/DANIPROPREMIUM/Netflix-Access-Freedom/zip/refs/heads/main)
+2. **Click aquí**: <p align="center">
+  <a href="https://codeload.github.com/DANIPROPREMIUM/Netflix-Access-Freedom/zip/refs/heads/main">
+    <img src="https://img.shields.io/badge/Descargar-Extensión-blue?style=for-the-badge&logo=google-chrome" alt="Descargar Extensión">
+  </a>
+
 3. **Abre Chrome u otro navegador basado en él**, copia y pega en la barra de búsqueda: `chrome://extensions/`
 4. **Activa el "Modo de desarrollador"** (esquina superior derecha en el caso de Chrome)
 5. **Haz clic en "Cargar descomprimida"**
