@@ -31,7 +31,7 @@
  ### 🤍 AtresPlayer        🧡 Crunchyroll   💜 Rakuten Viki  
  ### 💙 Prime video    💗 PornHub          💙 Paramount+   ❤️‍🔥 Netflix   
 ---
- ## 👇 **Únete a nuestro grupo de Telegram para obtener las cuentas al instante.**
+ ## 👇 **Únete a nuestro grupo de Telegram y consigue tú código ID de acceso.**
 
 [![GRUPO TELEGRAM - CUENTAS PREMIUM GRATIS](https://img.shields.io/badge/GRUPO%20TELEGRAM-CUENTAS%20PREMIUM%20GRATIS-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/cuentaspremiumid) 
 ---
@@ -80,7 +80,7 @@
 
 ### Para acceder a Netflix
 1.  Haz clic en el ícono de la extensión.
-2.  Pega tu código de acceso en el rentángulo en blanco.
+2.  Pega tu código ID de acceso en el rentángulo en blanco.
 3.  Presiona **"Acceso a Netflix"** y listo.
 
 ---
