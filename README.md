@@ -55,7 +55,7 @@
 ---
 
 ## 📖 Sobre el Proyecto
-*  **Netflix Access Freedom** es una extensión para Chrome y navegadores Chromium (Edge, Ópera, Vivaldi...)
+*  **Netflix Access Freedom** es una extensión para Chrome y navegadores Chromium (Edge, Ópera, Vivaldi...).
 *  **Accede a Netflix gratis** usando códigos ID de sesión generados por la extensión **Netflix Session Creator**.
 *  **Netflix Session Creator** no se puede instalar, es para uso exclusivo del creador.
 ---
