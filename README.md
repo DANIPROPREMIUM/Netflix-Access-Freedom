@@ -8,7 +8,7 @@
 La extensión de Chrome que te da **control total y libertad absoluta** sobre Netflix.
 
 ---
-# 💎 Cuentas Premium Gratis 💎
+## 💎 Cuentas Premium Gratis 💎
 
 ### Acceso gratuito al instante a mis cuentas premium de streaming compartidas con un código (ID).
 ### 🤍  AtresPlayer   🧡 Crunchyroll   💜 Rakuten Viki  
