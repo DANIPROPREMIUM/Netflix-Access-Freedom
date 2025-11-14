@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Netflix Access Freedom",
-  "version": "5.0",
-  "description": "Accede a Netflix con un código de sesión y mejora tu experiencia de visualización",
+  "version": "5.5",
+  "description": "Acceso libre. Sin límites. Sin restricciones.",
   "permissions": [
     "cookies",
     "activeTab",
