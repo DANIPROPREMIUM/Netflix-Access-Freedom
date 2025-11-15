@@ -514,16 +514,38 @@ input:checked + .subtitle-toggle-slider:before {
    Oculta notificaciones que interrumpen la reproducción cuando se accede desde un TV
    ========================================================================== */
 
+/* Selectores generales para notificaciones de TV */
 .notification-container,
 .success-notification,
 .nf-toast-container,
 .device-link-success-banner,
 .access-success-message,
+.device-linked-notification,
+.tv-connected-notification,
+.stream-activity-notification,
+.modal-interstitial,
+.interstitial-modal,
+.interstitial-full-screen,
+.uma-modal,
+.nf-modal,
+.device-link-modal,
+.stream-activity-modal,
+.tv-connection-modal,
+.device-connected-modal,
+.streaming-activity-modal,
+
 /* Selectores basados en atributos data-uia, muy comunes en Netflix */
 [data-uia*="notification"],
 [data-uia*="access-success"],
 [data-uia*="device-link"],
-[data-uia*="stream-activity"] {
+[data-uia*="stream-activity"],
+[data-uia*="tv-connected"],
+[data-uia*="device-linked"],
+[data-uia*="modal-interstitial"],
+[data-uia*="interstitial-modal"],
+[data-uia*="device-connected"],
+[data-uia*="tv-connection"],
+[data-uia*="streaming-activity"] {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
@@ -534,4 +556,97 @@ input:checked + .subtitle-toggle-slider:before {
     position: absolute !important;
     top: -9999px !important;
     left: -9999px !important;
+    z-index: -9999 !important;
+    transform: scale(0) !important;
+    max-height: 0 !important;
+    max-width: 0 !important;
+    min-height: 0 !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* Selectores más agresivos para capturar cualquier notificación */
+div[class*="notification"],
+div[class*="toast"],
+div[class*="banner"],
+div[class*="interstitial"],
+div[class*="modal"],
+div[class*="connected"],
+div[class*="linked"],
+div[class*="device"],
+div[class*="stream"],
+div[class*="activity"] {
+    /* Solo se aplicará si contiene texto relacionado con TV */
+}
+
+/* Reglas para elementos que contienen texto específico de TV */
+div:contains("TV"),
+div:contains("televisor"),
+div:contains("conectado"),
+div:contains("connected"),
+div:contains("device"),
+div:contains("dispositivo"),
+div:contains("streaming"),
+div:contains("activity"),
+div:contains("actividad"),
+div:contains("access"),
+div:contains("acceso"),
+div:contains("successfully"),
+div:contains("exitosamente") {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+    z-index: -9999 !important;
+    transform: scale(0) !important;
+}
+
+/* Pseudo-elementos que podrían mostrar notificaciones */
+div[class*="notification"]:before,
+div[class*="notification"]:after,
+div[class*="toast"]:before,
+div[class*="toast"]:after,
+div[class*="banner"]:before,
+div[class*="banner"]:after,
+div[class*="modal"]:before,
+div[class*="modal"]:after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Ocultar elementos overlay que podrían mostrar notificaciones */
+div[style*="position: fixed"][style*="z-index"],
+div[style*="position: absolute"][style*="z-index"] {
+    /* Solo se ocultará si contiene texto de notificación */
+}
+
+/* Prevenir animaciones de notificaciones */
+@keyframes notificationFadeIn {
+    from { opacity: 0; }
+    to { opacity: 0; } /* Siempre transparente */
+}
+
+@keyframes notificationSlideIn {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(-100%); } /* Siempre fuera de pantalla */
+}
+
+/* Forzar que todas las animaciones de notificaciones sean invisibles */
+.notification-container *,
+.success-notification *,
+.nf-toast-container *,
+.device-link-success-banner *,
+.access-success-message * {
+    animation: none !important;
+    transition: none !important;
 }
