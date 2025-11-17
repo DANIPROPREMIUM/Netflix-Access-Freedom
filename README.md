@@ -41,7 +41,7 @@
 
 | Acceso gratis con Código ID | Crea Sesiones ID (extensión exclusiva para el creador)  |
 | :---: | :---: |
-| ![Image](https://github.com/user-attachments/assets/43a2cf83-ab8e-411c-9f7c-cd59cdb8ce44) | ![Image](https://github.com/user-attachments/assets/5b7f9856-9e82-4e88-b1b3-e12b85cd9911) |
+| ![Image](https://github.com/user-attachments/assets/22297bae-c821-4408-84b0-5d98e6ab0726) | ![Image](https://github.com/user-attachments/assets/5b7f9856-9e82-4e88-b1b3-e12b85cd9911) |
 
 
 ---
