@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Netflix Access Freedom",
-  "version": "7.0",
+  "version": "7.1",
   "description": "Acceso libre. Sin límites. Sin restricciones.",
   "permissions": [
     "cookies",

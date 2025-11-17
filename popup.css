@@ -1,0 +1,452 @@
+/* --- Variables de Color y Estilo --- */
+:root {
+  --netflix-red: #E50914;
+  --netflix-red-dark: #b20710;
+  --telegram-blue: #0088cc;
+  --bg-primary: #141414;
+  --bg-secondary: #1f1f1f;
+  --bg-tertiary: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-muted: #808080;
+  --border-color: #404040;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --gradient-primary: linear-gradient(135deg, var(--netflix-red), var(--netflix-red-dark));
+  --transition-speed: 0.3s;
+}
+
+/* --- Estilos Generales y Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 380px;
+  min-height: 480px;
+  font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* --- Header para el Logo de Netflix --- */
+.logo-header {
+  padding: 25px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--netflix-red);
+  letter-spacing: -1px;
+  transition: transform var(--transition-speed) ease;
+  text-shadow: 0 0 10px var(--netflix-red), 0 0 20px var(--netflix-red);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo i {
+  margin-right: 12px;
+}
+
+/* --- NUEVO: Header para el Título "Access Freedom" --- */
+.access-freedom-header {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.extension-title-info {
+  text-align: center;
+}
+
+.extension-title-info h1 {
+  font-size: 28px; /* Tamaño de título prominente */
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.extension-title-info .version-badge,
+.extension-title-info .credit-text {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.version-badge {
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 500;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.version-badge:hover {
+  background-color: var(--netflix-red);
+  color: var(--text-primary);
+}
+
+.credit-text {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: color var(--transition-speed) ease;
+}
+
+.credit-text:hover {
+  color: var(--text-secondary);
+}
+
+/* --- NUEVO: Barra de Acciones para el Botón de Telegram --- */
+.action-bar {
+  padding: 15px 25px;
+  display: flex;
+  justify-content: center; /* Centrado */
+  border-bottom: 1px solid var(--border-color);
+}
+
+.telegram-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--telegram-blue);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all var(--transition-speed) ease;
+  box-shadow: 0 2px 5px rgba(0, 136, 204, 0.3);
+}
+
+.telegram-button:hover {
+  background-color: #0077b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 136, 204, 0.5);
+}
+
+.telegram-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 136, 204, 0.4);
+}
+
+.telegram-button span {
+  margin-left: 8px;
+}
+
+/* --- Contenido Principal (AJUSTADO) --- */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px;
+}
+
+/* --- Sección de Input --- */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: all var(--transition-speed) ease;
+  overflow: hidden;
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--netflix-red);
+  box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.2);
+}
+
+.input-icon {
+  color: var(--text-muted);
+  padding: 0 15px;
+  font-size: 16px;
+  transition: color var(--transition-speed) ease;
+}
+
+.input-wrapper:focus-within .input-icon {
+  color: var(--netflix-red);
+}
+
+#full-code-input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  padding: 15px 5px;
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+}
+
+#full-code-input::placeholder {
+  color: var(--text-muted);
+}
+
+.paste-button {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 0 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all var(--transition-speed) ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.paste-button:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Sección de Estado del Código --- */
+.code-status-section {
+  display: flex;
+  justify-content: center;
+}
+
+.code-status-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 15px;
+  width: 100%;
+  transition: all var(--transition-speed) ease;
+}
+
+.status-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.status-header .status-icon {
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.status-header span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.status-details {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.status-details.expiring-soon {
+  color: #ff9800;
+  font-weight: 500;
+}
+
+.status-details.expired {
+  color: #f44336;
+  font-weight: 600;
+}
+
+.status-details.valid {
+  color: #4CAF50;
+  font-weight: 500;
+}
+
+/* --- Sección de Estado de Sesión --- */
+.status-section {
+  display: flex;
+  justify-content: center;
+}
+
+.status-display {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all var(--transition-speed) ease;
+}
+
+.status-display.active {
+  border-color: #4CAF50;
+  color: #4CAF50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+.status-display.inactive {
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.status-icon {
+  font-size: 16px;
+  transition: transform var(--transition-speed) ease;
+}
+
+.status-display.active .status-icon {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* --- Botón Principal con Efecto Ripple --- */
+.main-button {
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all var(--transition-speed) ease;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.main-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+.main-button:active {
+  transform: translateY(0);
+}
+
+.main-button:disabled {
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.button-icon {
+  transition: transform var(--transition-speed) ease;
+}
+
+.main-button:hover .button-icon {
+  transform: scale(1.1);
+}
+
+.button-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  animation: ripple-animation 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* --- Contenedor de Notificaciones --- */
+#notification-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notification {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  border-left: 4px solid var(--netflix-red);
+  min-width: 250px;
+  animation: slide-in 0.3s ease-out;
+  transition: all 0.3s ease;
+}
+
+.notification.success {
+  border-left-color: #4CAF50;
+}
+
+.notification.error {
+  border-left-color: #f44336;
+}
+
+.notification.hiding {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --- Animaciones --- */
+@keyframes glow {
+  from { text-shadow: 0 0 5px var(--netflix-red); }
+  to { text-shadow: 0 0 10px var(--netflix-red), 0 0 15px var(--netflix-red); }
+}
+
+.logo span {
+    animation: glow 2s infinite alternate;
+}
