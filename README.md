@@ -3,7 +3,7 @@
 <!-- ======================================= -->
 
 <!-- Título Principal -->
-<h1 align="center">Netflix Access Freedom v7.0 FINAL</h1>
+<h1 align="center">Netflix Access Freedom v7.1 FINAL</h1>
 
 
 <!-- Imagen Principal (Screenshot o Logo) -->
