@@ -52,7 +52,7 @@
 ---
 
 ## 📖 Sobre el Proyecto
-*  **Netflix Access Freedom** extensión para Windows/ PC de Chrome y navegadores Chromium (Edge, Ópera, Vivaldi...).
+*  **Netflix Access Freedom** solo es compatible para Windows/ PC de Chrome y navegadores Chromium.
 *  **Accede a Netflix gratis** usando códigos ID de sesión generados por la extensión **Netflix Session Creator**.
 *  **Netflix Session Creator** no se puede instalar, es para uso exclusivo del creador.
 ---
