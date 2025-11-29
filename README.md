@@ -3,7 +3,7 @@
 <!-- ======================================= -->
 
 <!-- Título Principal -->
-<h1 align="center">Netflix Access Freedom v7.1</h1>
+<h1 align="center">Netflix Access Freedom v8.0</h1>
 
 
 <!-- Imagen Principal (Screenshot o Logo) -->
@@ -11,22 +11,19 @@
   <img src="https://github.com/user-attachments/assets/ba681106-679a-47c8-a819-0c8754fd9798" width="70%" alt="Screenshot de la extensión Netflix Access Freedom">
 </p>
 
-<!-- Botón de Acción Principal -->
 <p align="center">
-  <a href="https://t.me/cuentaspremiumid">
-    <img src="https://img.shields.io/badge/GRUPO%20TELEGRAM-CUENTAS%20GRATIS-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Grupo de Telegram">
-  </a>
+<img src="https://badgen.net/badge/SOLO%20PARA%20WINDOWS/PC?icon=windows&labelColor=555555&scale=2" alt="SOLO PARA PC / WINDOWS">
 </p>
 
 <!-- Badges de Información del Proyecto -->
 <p align="center">
   <img src="https://img.shields.io/badge/Netflix-E50914?style=for-the-badge&logo=netflix&logoColor=white" alt="Netflix">
-  <img src="https://img.shields.io/badge/Chrome-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Chrome Extension">
-  <img src="https://img.shields.io/badge/Version-5.0-green?style=for-the-badge" alt="Version">
+  <img src="https://img.shields.io/badge/Chrome_y_navegadores_del_mismo_motor-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Chrome y navegadores del mismo motor">
   <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License">
-</p>
+  <img src="https://img.shields.io/badge/version-8.0-blue.svg?style=for-the-badge" alt="Version">
+</p>  
 
----
+
 ## 💎 Cuentas Premium Gratis por Código ID 💎
 
  ### 🤍 AtresPlayer        🧡 Crunchyroll   💜 Rakuten Viki  
@@ -41,8 +38,7 @@
 
 | Acceso gratis con Código ID | Crea Sesiones ID (extensión exclusiva para el creador)  |
 | :---: | :---: |
-| ![Image](https://github.com/user-attachments/assets/22297bae-c821-4408-84b0-5d98e6ab0726) | ![Image](https://github.com/user-attachments/assets/5b7f9856-9e82-4e88-b1b3-e12b85cd9911) |
-
+| ![Image](https://github.com/user-attachments/assets/3d956c68-05b7-4a6c-a610-e0dbadd3e5f9) | ![Image](https://github.com/user-attachments/assets/5b7f9856-9e82-4e88-b1b3-e12b85cd9911) |
 
 ---
 
@@ -51,13 +47,12 @@
 *   🔑 **Acceso instantáneo con un código ID**: Entra a Netflix en un clic. Olvídate de contraseñas.
 *   🛡️ **Bypass automático de restricciones**: Omite límites de dispositivos y bloqueos geográficos sin esfuerzo.
 *   🔒 **Protección de sesión**: Sesión estable durante 3 días desde que se crea la sesión con Session Creator.
-*   🎮 **Reproductor propio**: Todas las funciones del oficial, con un diseño más moderno e intuitivo.
-
+*   ⌛ **Estado del código ID**: Antes de entrar te marca el tiempo restante de la sesión.
 
 ---
 
 ## 📖 Sobre el Proyecto
-*  **Netflix Access Freedom** es una extensión para Chrome y navegadores Chromium (Edge, Ópera, Vivaldi...).
+*  **Netflix Access Freedom** es una extensión para Windows/ PC de Chrome y navegadores Chromium (Edge, Ópera, Vivaldi...).
 *  **Accede a Netflix gratis** usando códigos ID de sesión generados por la extensión **Netflix Session Creator**.
 *  **Netflix Session Creator** no se puede instalar, es para uso exclusivo del creador.
 ---
