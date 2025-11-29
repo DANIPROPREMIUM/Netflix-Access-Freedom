@@ -1,14 +1,15 @@
 {
   "manifest_version": 3,
   "name": "Netflix Access Freedom",
-  "version": "7.1",
+  "version": "8.0",
   "description": "Acceso libre. Sin límites. Sin restricciones.",
   "permissions": [
     "cookies",
     "activeTab",
     "scripting",
     "storage",
-    "windows"
+    "windows",
+    "webNavigation"
   ],
   "host_permissions": [
     "*://*.netflix.com/*"
@@ -32,19 +33,9 @@
   "content_scripts": [
     {
       "matches": ["*://*.netflix.com/*"],
-      "js": ["content.js", "main.js"],
-      "css": ["netflix-controller.css"],
+      "js": ["content.js"],
+      "css": [],
       "run_at": "document_idle"
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "netflix-seeker.js",
-        "netflix-audioChange.js",
-        "netflix-substitleChange.js"
-      ],
-      "matches": ["*://*.netflix.com/*"]
     }
   ]
 }

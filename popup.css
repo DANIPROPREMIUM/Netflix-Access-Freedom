@@ -24,11 +24,12 @@
 
 body {
   width: 380px;
-  min-height: 480px;
+  /* CAMBIO CLAVE: Altura fija para evitar scroll */
+  height: 520px;
   font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  overflow: hidden;
+  overflow: hidden; /* Previene cualquier scroll */
   display: flex;
   flex-direction: column;
 }
@@ -36,14 +37,15 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  /* CAMBIO CLAVE: El contenedor ocupa toda la altura */
+  height: 100%;
   width: 100%;
   position: relative;
 }
 
 /* --- Header para el Logo de Netflix --- */
 .logo-header {
-  padding: 25px 20px;
+  padding: 20px 20px; /* Reducido un poco el padding */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,7 +73,7 @@ body {
 
 /* --- NUEVO: Header para el Título "Access Freedom" --- */
 .access-freedom-header {
-  padding: 20px;
+  padding: 15px 20px; /* Reducido el padding */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,7 +85,7 @@ body {
 }
 
 .extension-title-info h1 {
-  font-size: 28px; /* Tamaño de título prominente */
+  font-size: 28px;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 8px;
@@ -123,9 +125,9 @@ body {
 
 /* --- NUEVO: Barra de Acciones para el Botón de Telegram --- */
 .action-bar {
-  padding: 15px 25px;
+  padding: 12px 25px; /* Reducido el padding */
   display: flex;
-  justify-content: center; /* Centrado */
+  justify-content: center;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -162,11 +164,12 @@ body {
 
 /* --- Contenido Principal (AJUSTADO) --- */
 .main-content {
-  flex-grow: 1;
+  flex-grow: 1; /* Permite que esta sección ocupe el espacio restante */
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  padding: 25px;
+  /* CAMBIO CLAVE: Gap reducido para compactar el contenido */
+  gap: 15px;
+  padding: 20px;
 }
 
 /* --- Sección de Input --- */
@@ -288,51 +291,6 @@ body {
   font-weight: 500;
 }
 
-/* --- Sección de Estado de Sesión --- */
-.status-section {
-  display: flex;
-  justify-content: center;
-}
-
-.status-display {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 50px;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  font-weight: 500;
-  transition: all var(--transition-speed) ease;
-}
-
-.status-display.active {
-  border-color: #4CAF50;
-  color: #4CAF50;
-  box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
-}
-
-.status-display.inactive {
-  border-color: var(--border-color);
-  color: var(--text-secondary);
-}
-
-.status-icon {
-  font-size: 16px;
-  transition: transform var(--transition-speed) ease;
-}
-
-.status-display.active .status-icon {
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
-}
-
 /* --- Botón Principal con Efecto Ripple --- */
 .main-button {
   background: var(--gradient-primary);
@@ -423,6 +381,10 @@ body {
 
 .notification.error {
   border-left-color: #f44336;
+}
+
+.notification.warning {
+  border-left-color: #ff9800;
 }
 
 .notification.hiding {
