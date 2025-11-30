@@ -59,7 +59,7 @@
 
 ## 🚀 Instalación
 
-1. **Descarga el archivo ZIP** de este repositorio y pones la carpeta fuera del ZIP:
+1. **Descarga el archivo ZIP** de este repositorio y pones la carpeta fuera del ZIP, en el escritorio:
 2. **Click aquí**: <p align="center">
   <a href="https://codeload.github.com/DANIPROPREMIUM/Netflix-Access-Freedom/zip/refs/heads/main">
     <img src="https://img.shields.io/badge/Descargar-Extensión-blue?style=for-the-badge&logo=google-chrome" alt="Descargar Extensión">
@@ -68,7 +68,7 @@
 3. **Abre Chrome u otro navegador basado en él**, copia y pega en la barra de búsqueda: `chrome://extensions/`
 4. **Activa el "Modo de desarrollador"** (esquina superior derecha en el caso de Chrome)
 5. **Haz clic en "Cargar descomprimida"**
-6. **Selecciona la carpeta** donde descargaste los archivos
+6. **Selecciona la carpeta** en el escritorio
 7. ¡Listo! La extensión está instalada y lista para usar
 
 ---
