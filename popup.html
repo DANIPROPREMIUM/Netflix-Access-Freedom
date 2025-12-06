@@ -4,36 +4,405 @@
 <meta charset="UTF-8">
 <title>Netflix Access Freedom</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="popup.css">
+<style>
+/* --- Variables de Color y Estilo Moderno --- */
+:root {
+  --netflix-red: #E50914;
+  --netflix-red-gradient-start: #f40612;
+  --netflix-red-gradient-end: #E50914;
+  --telegram-blue: #0088cc;
+  --telegram-blue-gradient-start: #0099e0;
+  --telegram-blue-gradient-end: #0088cc;
+  
+  /* Fondo y Contenedores - Tonos más suaves y profundos */
+  --bg-primary: #0f0f0f; /* Un negro más suave */
+  --bg-card: rgba(20, 20, 20, 0.75); /* Fondo semitransparente para glassmorphism */
+  --bg-input: rgba(255, 255, 255, 0.08); /* Input más sutil */
+  --bg-button-hover: rgba(255, 255, 255, 0.15);
+  --bg-help-card: rgba(0, 136, 204, 0.1); /* Fondo sutil para la tarjeta de ayuda */
+
+  /* Texto - Mejor jerarquía */
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-muted: #808080;
+  --text-placeholder: #a0a0a0;
+
+  /* Bordes y Sombras - Más definidos y modernos */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-focus: var(--netflix-red);
+  --border-help-card: rgba(0, 136, 204, 0.3);
+  --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --shadow-button: 0 4px 15px rgba(229, 9, 20, 0.4);
+  --shadow-button-hover: 0 6px 20px rgba(229, 9, 20, 0.6);
+  --shadow-input-focus: 0 0 0 3px rgba(229, 9, 20, 0.3);
+  --shadow-help-card: 0 4px 20px rgba(0, 136, 204, 0.15);
+
+  /* Espaciado y Transiciones */
+  --transition-speed: 0.3s;
+  --border-radius-large: 20px;
+  --border-radius-medium: 12px;
+  --border-radius-small: 8px;
+}
+
+/* --- Estilos Generales y Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 400px; /* Ligeramente más ancho para un mejor balance */
+  min-height: 450px; /* Altura mínima reducida para menos margen */
+  font-family: 'Segoe UI', 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* Fondo con un degradado sutil para más profundidad */
+  background: linear-gradient(145deg, #1a1a1a, var(--bg-primary));
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Reducido de 20px a 10px */
+  overflow: hidden;
+}
+
+/* --- Contenedor Principal con Glassmorphism --- */
+.container {
+  width: 100%;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px); /* Efecto de cristal esmerilado */
+  -webkit-backdrop-filter: blur(20px); /* Compatibilidad con Safari */
+  border-radius: var(--border-radius-large);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+  padding: 20px; /* Reducido de 30px a 20px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all var(--transition-speed) ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* --- Header Unificado y Moderno --- */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; /* Reducido de 25px a 20px */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 56px; 
+  font-weight: 800;
+  color: var(--netflix-red);
+  letter-spacing: -1.5px;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 10px rgba(229, 9, 20, 0.5);
+  transition: transform var(--transition-speed) ease;
+}
+
+/* NUEVO: Animación de Pulso Sutil (estilo Netflix) */
+@keyframes subtle-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); } /* Pulso único y suave */
+  100% { transform: scale(1); }
+}
+
+/* Clase que JS añadirá para activar la animación una sola vez */
+.pulse-once {
+  animation: subtle-pulse 1.5s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo i {
+  margin-right: 10px;
+}
+
+.extension-title-info h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.extension-title-info .version-badge,
+.extension-title-info .credit-text {
+  display: inline-block;
+  margin: 0 5px;
+  font-size: 11px;
+}
+
+.version-badge {
+  background: rgba(229, 9, 20, 0.2);
+  color: var(--netflix-red);
+  padding: 4px 12px;
+  border-radius: 50px; /* Forma de píldora */
+  font-weight: 600;
+  border: 1px solid rgba(229, 9, 20, 0.3);
+}
+
+.credit-text {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* --- Contenido Principal --- */
+.main-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 35px; /* CAMBIO: Aumentado de 25px a 35px para más separación */
+}
+
+/* --- Sección de Input Rediseñada --- */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-medium);
+  transition: all var(--transition-speed) ease;
+  overflow: hidden;
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--border-focus);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-input-focus);
+}
+
+.input-icon {
+  color: var(--text-placeholder);
+  padding: 0 15px;
+  font-size: 16px;
+  transition: color var(--transition-speed) ease;
+}
+
+.input-wrapper:focus-within .input-icon {
+  color: var(--netflix-red);
+}
+
+#full-code-input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  padding: 16px 10px; /* Más padding para un área de toque mayor */
+  color: var(--text-primary);
+  font-size: 15px;
+  outline: none;
+}
+
+#full-code-input::placeholder {
+  color: var(--text-placeholder);
+}
+
+.paste-button {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 0 15px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all var(--transition-speed) ease;
+  border-radius: var(--border-radius-small);
+}
+
+.paste-button:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-button-hover);
+}
+
+/* --- Botón Principal con Degradado y Efectos --- */
+.main-button {
+  background: linear-gradient(45deg, var(--netflix-red-gradient-start), var(--netflix-red-gradient-end));
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  border-radius: var(--border-radius-medium);
+  font-size: 16px;
+  font-weight: 700; /* Más negrita */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all var(--transition-speed) ease;
+  /* NUEVO: Sombra y brillo mejorados */
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4), 0 0 20px rgba(229, 9, 20, 0.3);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  /* NUEVO: Efecto de brillo pulsante */
+  animation: brilliant-glow 3s infinite ease-in-out;
+}
+
+/* NUEVO: Animación de Brillo Pulsante para el Botón */
+@keyframes brilliant-glow {
+  0% { box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4), 0 0 20px rgba(229, 9, 20, 0.3); }
+  50% { box-shadow: 0 4px 20px rgba(229, 9, 20, 0.6), 0 0 30px rgba(229, 9, 20, 0.5); }
+  100% { box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4), 0 0 20px rgba(229, 9, 20, 0.3); }
+}
+
+.main-button:hover {
+  transform: translateY(-3px);
+  /* Al hacer hover, el brillo es más intenso y estático */
+  box-shadow: 0 8px 25px rgba(229, 9, 20, 0.7), 0 0 35px rgba(229, 9, 20, 0.5);
+  background: linear-gradient(45deg, var(--netflix-red-gradient-end), var(--netflix-red-gradient-start)); /* Invierte el degradado */
+  animation-play-state: paused; /* Pausa la animación al hacer hover */
+}
+
+.main-button:active {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-button);
+}
+
+.main-button:disabled {
+  background: linear-gradient(45deg, #4a4a4a, #2a2a2a);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  animation-play-state: paused; /* Pausa la animación cuando está deshabilitado */
+}
+
+.button-icon {
+  transition: transform var(--transition-speed) ease;
+}
+
+.main-button:hover .button-icon {
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* --- Efecto Ripple Mejorado --- */
+.button-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  animation: ripple-animation 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* --- Botón de Telegram Centrado --- */
+.telegram-container {
+  display: flex;
+  justify-content: center;
+}
+
+.help-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(45deg, var(--telegram-blue-gradient-start), var(--telegram-blue-gradient-end));
+  color: white;
+  padding: 10px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all var(--transition-speed) ease;
+  box-shadow: 0 2px 8px rgba(0, 136, 204, 0.3);
+}
+
+.help-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 136, 204, 0.4);
+}
+
+/* --- Contenedor de Notificaciones Moderno --- */
+#notification-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notification {
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  color: var(--text-primary);
+  padding: 16px 20px;
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-card);
+  border-left: 4px solid var(--netflix-red);
+  min-width: 250px;
+  animation: slide-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animación más elástica */
+  transition: all 0.3s ease;
+}
+
+.notification.success {
+  border-left-color: #4CAF50;
+}
+
+.notification.error {
+  border-left-color: #f44336;
+}
+
+.notification.warning {
+  border-left-color: #ff9800;
+}
+
+.notification.hiding {
+  opacity: 0;
+  transform: translateX(100%) scale(0.8);
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(100%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+</style>
 </head>
 <body>
+
   <div class="container">
-    <!-- 1. ENCABEZADO: SOLO EL LOGO DE NETFLIX -->
-    <header class="logo-header">
+    <!-- 1. ENCABEZADO UNIFICADO: LOGO Y TÍTULO -->
+    <header class="header">
       <div class="logo">
         <i class="fab fa-netflix"></i>
         <span>NETFLIX</span>
       </div>
-    </header>
-
-    <!-- 2. NUEVO ENCABEZADO: TÍTULO "ACCESS FREEDOM" CENTRADO -->
-    <header class="access-freedom-header">
       <div class="extension-title-info">
         <h1>Access Freedom</h1>
-        <div class="version-badge">v8.0</div>
+        <div class="version-badge">v9.0</div>
         <div class="credit-text">BY DANIPRO PREMIUM</div>
       </div>
     </header>
 
-    <!-- 3. BARRA DE ACCIONES: SOLO EL BOTÓN DE TELEGRAM -->
-    <div class="action-bar">
-      <a href="https://t.me/cuentaspremiumid" target="_blank" class="telegram-button">
-        <i class="fab fa-telegram"></i>
-        <span>OBTÉN NUEVOS CÓDIGOS ID</span>
-      </a>
-    </div>
-
-    <!-- 4. CONTENIDO PRINCIPAL (EL RESTO) -->
+    <!-- 2. CONTENIDO PRINCIPAL -->
     <main class="main-content">
       <div class="input-section">
         <div class="input-wrapper">
@@ -49,19 +418,17 @@
           <div class="button-ripple"></div>
         </button>
       </div>
-
-      <div class="code-status-section">
-        <div class="code-status-card">
-          <div class="status-header">
-            <i class="fas fa-clock status-icon"></i>
-            <span id="code-status-text">Estado del Código</span>
-          </div>
-          <div id="code-expiry-text">Introduce un código para ver su estado</div>
-        </div>
+      
+      <!-- Botón de Telegram centrado -->
+      <div class="telegram-container">
+        <a href="https://t.me/cuentaspremiumid" target="_blank" class="help-button">
+          <i class="fab fa-telegram"></i>
+          <span>Ir al Grupo</span>
+        </a>
       </div>
     </main>
 
-    <!-- Contenedor de notificaciones -->
+    <!-- Contenedor de notificaciones (oculto por defecto) -->
     <div id="notification-container"></div>
   </div>
 

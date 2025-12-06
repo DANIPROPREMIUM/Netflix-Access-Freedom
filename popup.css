@@ -1,18 +1,40 @@
-/* --- Variables de Color y Estilo --- */
+/* --- Variables de Color y Estilo Moderno --- */
 :root {
   --netflix-red: #E50914;
-  --netflix-red-dark: #b20710;
+  --netflix-red-gradient-start: #f40612;
+  --netflix-red-gradient-end: #E50914;
   --telegram-blue: #0088cc;
-  --bg-primary: #141414;
-  --bg-secondary: #1f1f1f;
-  --bg-tertiary: #2a2a2a;
+  --telegram-blue-gradient-start: #0099e0;
+  --telegram-blue-gradient-end: #0088cc;
+  
+  /* Fondo y Contenedores - Tonos más suaves y profundos */
+  --bg-primary: #0f0f0f; /* Un negro más suave */
+  --bg-card: rgba(20, 20, 20, 0.75); /* Fondo semitransparente para glassmorphism */
+  --bg-input: rgba(255, 255, 255, 0.08); /* Input más sutil */
+  --bg-button-hover: rgba(255, 255, 255, 0.15);
+  --bg-help-card: rgba(0, 136, 204, 0.1); /* Fondo sutil para la tarjeta de ayuda */
+
+  /* Texto - Mejor jerarquía */
   --text-primary: #ffffff;
   --text-secondary: #b3b3b3;
   --text-muted: #808080;
-  --border-color: #404040;
-  --shadow-color: rgba(0, 0, 0, 0.5);
-  --gradient-primary: linear-gradient(135deg, var(--netflix-red), var(--netflix-red-dark));
+  --text-placeholder: #a0a0a0;
+
+  /* Bordes y Sombras - Más definidos y modernos */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-focus: var(--netflix-red);
+  --border-help-card: rgba(0, 136, 204, 0.3);
+  --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --shadow-button: 0 4px 15px rgba(229, 9, 20, 0.4);
+  --shadow-button-hover: 0 6px 20px rgba(229, 9, 20, 0.6);
+  --shadow-input-focus: 0 0 0 3px rgba(229, 9, 20, 0.3);
+  --shadow-help-card: 0 4px 20px rgba(0, 136, 204, 0.15);
+
+  /* Espaciado y Transiciones */
   --transition-speed: 0.3s;
+  --border-radius-large: 20px;
+  --border-radius-medium: 12px;
+  --border-radius-small: 8px;
 }
 
 /* --- Estilos Generales y Reset --- */
@@ -23,44 +45,74 @@
 }
 
 body {
-  width: 380px;
-  /* CAMBIO CLAVE: Altura fija para evitar scroll */
-  height: 520px;
-  font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: var(--bg-primary);
+  width: 400px; /* Ligeramente más ancho para un mejor balance */
+  min-height: 580px; /* Altura mínima para que el contenido no se apriete */
+  font-family: 'Segoe UI', 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* Fondo con un degradado sutil para más profundidad */
+  background: linear-gradient(145deg, #1a1a1a, var(--bg-primary));
   color: var(--text-primary);
-  overflow: hidden; /* Previene cualquier scroll */
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  /* CAMBIO CLAVE: El contenedor ocupa toda la altura */
-  height: 100%;
-  width: 100%;
-  position: relative;
-}
-
-/* --- Header para el Logo de Netflix --- */
-.logo-header {
-  padding: 20px 20px; /* Reducido un poco el padding */
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid var(--border-color);
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* --- Contenedor Principal con Glassmorphism --- */
+.container {
+  width: 100%;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px); /* Efecto de cristal esmerilado */
+  -webkit-backdrop-filter: blur(20px); /* Compatibilidad con Safari */
+  border-radius: var(--border-radius-large);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all var(--transition-speed) ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* --- Header Unificado y Moderno --- */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  font-size: 48px;
-  font-weight: 700;
+  /* CAMBIO: Tamaño del logo aumentado */
+  font-size: 56px; 
+  font-weight: 800;
   color: var(--netflix-red);
-  letter-spacing: -1px;
+  letter-spacing: -1.5px;
+  /* CAMBIO: Margen inferior ajustado para el nuevo tamaño */
+  margin-bottom: 15px;
+  text-shadow: 0 2px 10px rgba(229, 9, 20, 0.5);
   transition: transform var(--transition-speed) ease;
-  text-shadow: 0 0 10px var(--netflix-red), 0 0 20px var(--netflix-red);
+  /* ELIMINADO: La animación ahora se controla con JS */
+}
+
+/* NUEVO: Animación de Pulso Sutil (estilo Netflix) */
+@keyframes subtle-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); } /* Pulso único y suave */
+  100% { transform: scale(1); }
+}
+
+/* Clase que JS añadirá para activar la animación una sola vez */
+.pulse-once {
+  animation: subtle-pulse 1.5s ease-in-out;
 }
 
 .logo:hover {
@@ -68,24 +120,11 @@ body {
 }
 
 .logo i {
-  margin-right: 12px;
-}
-
-/* --- NUEVO: Header para el Título "Access Freedom" --- */
-.access-freedom-header {
-  padding: 15px 20px; /* Reducido el padding */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.extension-title-info {
-  text-align: center;
+  margin-right: 10px;
 }
 
 .extension-title-info h1 {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 8px;
@@ -95,84 +134,32 @@ body {
 .extension-title-info .credit-text {
   display: inline-block;
   margin: 0 5px;
+  font-size: 11px;
 }
 
 .version-badge {
-  background-color: var(--bg-tertiary);
-  color: var(--text-secondary);
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-size: 10px;
-  font-weight: 500;
-  transition: background-color var(--transition-speed) ease;
-}
-
-.version-badge:hover {
-  background-color: var(--netflix-red);
-  color: var(--text-primary);
+  background: rgba(229, 9, 20, 0.2);
+  color: var(--netflix-red);
+  padding: 4px 12px;
+  border-radius: 50px; /* Forma de píldora */
+  font-weight: 600;
+  border: 1px solid rgba(229, 9, 20, 0.3);
 }
 
 .credit-text {
-  font-size: 10px;
   color: var(--text-muted);
   font-weight: 500;
-  transition: color var(--transition-speed) ease;
 }
 
-.credit-text:hover {
-  color: var(--text-secondary);
-}
-
-/* --- NUEVO: Barra de Acciones para el Botón de Telegram --- */
-.action-bar {
-  padding: 12px 25px; /* Reducido el padding */
-  display: flex;
-  justify-content: center;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.telegram-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--telegram-blue);
-  color: white;
-  padding: 10px 15px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  white-space: nowrap;
-  transition: all var(--transition-speed) ease;
-  box-shadow: 0 2px 5px rgba(0, 136, 204, 0.3);
-}
-
-.telegram-button:hover {
-  background-color: #0077b3;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 136, 204, 0.5);
-}
-
-.telegram-button:active {
-  transform: translateY(0);
-  box-shadow: 0 1px 3px rgba(0, 136, 204, 0.4);
-}
-
-.telegram-button span {
-  margin-left: 8px;
-}
-
-/* --- Contenido Principal (AJUSTADO) --- */
+/* --- Contenido Principal --- */
 .main-content {
-  flex-grow: 1; /* Permite que esta sección ocupe el espacio restante */
+  width: 100%;
   display: flex;
   flex-direction: column;
-  /* CAMBIO CLAVE: Gap reducido para compactar el contenido */
-  gap: 15px;
-  padding: 20px;
+  gap: 20px;
 }
 
-/* --- Sección de Input --- */
+/* --- Sección de Input Rediseñada --- */
 .input-section {
   display: flex;
   flex-direction: column;
@@ -183,20 +170,21 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  background-color: var(--bg-secondary);
+  background: var(--bg-input);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: var(--border-radius-medium);
   transition: all var(--transition-speed) ease;
   overflow: hidden;
 }
 
 .input-wrapper:focus-within {
-  border-color: var(--netflix-red);
-  box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.2);
+  border-color: var(--border-focus);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-input-focus);
 }
 
 .input-icon {
-  color: var(--text-muted);
+  color: var(--text-placeholder);
   padding: 0 15px;
   font-size: 16px;
   transition: color var(--transition-speed) ease;
@@ -210,14 +198,14 @@ body {
   flex-grow: 1;
   background: transparent;
   border: none;
-  padding: 15px 5px;
+  padding: 16px 10px; /* Más padding para un área de toque mayor */
   color: var(--text-primary);
-  font-size: 14px;
+  font-size: 15px;
   outline: none;
 }
 
 #full-code-input::placeholder {
-  color: var(--text-muted);
+  color: var(--text-placeholder);
 }
 
 .paste-button {
@@ -226,106 +214,68 @@ body {
   color: var(--text-secondary);
   padding: 0 15px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
   transition: all var(--transition-speed) ease;
-  position: relative;
-  overflow: hidden;
+  border-radius: var(--border-radius-small);
 }
 
 .paste-button:hover {
   color: var(--text-primary);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--bg-button-hover);
 }
 
-/* --- Sección de Estado del Código --- */
-.code-status-section {
-  display: flex;
-  justify-content: center;
-}
-
-.code-status-card {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 15px;
-  width: 100%;
-  transition: all var(--transition-speed) ease;
-}
-
-.status-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-
-.status-header .status-icon {
-  color: var(--text-muted);
-  font-size: 16px;
-}
-
-.status-header span {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.status-details {
-  font-size: 13px;
-  color: var(--text-secondary);
-  text-align: center;
-}
-
-.status-details.expiring-soon {
-  color: #ff9800;
-  font-weight: 500;
-}
-
-.status-details.expired {
-  color: #f44336;
-  font-weight: 600;
-}
-
-.status-details.valid {
-  color: #4CAF50;
-  font-weight: 500;
-}
-
-/* --- Botón Principal con Efecto Ripple --- */
+/* --- Botón Principal con Degradado y Efectos --- */
 .main-button {
-  background: var(--gradient-primary);
+  background: linear-gradient(45deg, var(--netflix-red-gradient-start), var(--netflix-red-gradient-end));
   color: white;
   border: none;
-  padding: 15px 20px;
-  border-radius: 8px;
+  padding: 16px 24px;
+  border-radius: var(--border-radius-medium);
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700; /* Más negrita */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   transition: all var(--transition-speed) ease;
-  box-shadow: 0 4px 15px var(--shadow-color);
+  /* NUEVO: Sombra y brillo mejorados */
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4), 0 0 20px rgba(229, 9, 20, 0.3);
   position: relative;
   overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  /* NUEVO: Efecto de brillo pulsante */
+  animation: brilliant-glow 3s infinite ease-in-out;
+}
+
+/* NUEVO: Animación de Brillo Pulsante para el Botón */
+@keyframes brilliant-glow {
+  0% { box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4), 0 0 20px rgba(229, 9, 20, 0.3); }
+  50% { box-shadow: 0 4px 20px rgba(229, 9, 20, 0.6), 0 0 30px rgba(229, 9, 20, 0.5); }
+  100% { box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4), 0 0 20px rgba(229, 9, 20, 0.3); }
 }
 
 .main-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px var(--shadow-color);
+  transform: translateY(-3px);
+  /* Al hacer hover, el brillo es más intenso y estático */
+  box-shadow: 0 8px 25px rgba(229, 9, 20, 0.7), 0 0 35px rgba(229, 9, 20, 0.5);
+  background: linear-gradient(45deg, var(--netflix-red-gradient-end), var(--netflix-red-gradient-start)); /* Invierte el degradado */
+  animation-play-state: paused; /* Pausa la animación al hacer hover */
 }
 
 .main-button:active {
-  transform: translateY(0);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-button);
 }
 
 .main-button:disabled {
-  background: var(--bg-tertiary);
+  background: linear-gradient(45deg, #4a4a4a, #2a2a2a);
   color: var(--text-muted);
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
+  animation-play-state: paused; /* Pausa la animación cuando está deshabilitado */
 }
 
 .button-icon {
@@ -333,13 +283,14 @@ body {
 }
 
 .main-button:hover .button-icon {
-  transform: scale(1.1);
+  transform: rotate(10deg) scale(1.1);
 }
 
+/* --- Efecto Ripple Mejorado --- */
 .button-ripple {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.5);
   transform: scale(0);
   animation: ripple-animation 0.6s ease-out;
   pointer-events: none;
@@ -352,11 +303,77 @@ body {
   }
 }
 
-/* --- Contenedor de Notificaciones --- */
+/* --- NUEVA TARJETA DE AYUDA / SOPORTE --- */
+.help-card {
+  display: flex;
+  align-items: center;
+  background: var(--bg-help-card);
+  border: 1px solid var(--border-help-card);
+  border-radius: var(--border-radius-medium);
+  padding: 20px;
+  gap: 20px;
+  transition: all var(--transition-speed) ease;
+  box-shadow: var(--shadow-help-card);
+}
+
+.help-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 136, 204, 0.2);
+}
+
+.help-icon {
+  font-size: 36px;
+  color: var(--telegram-blue);
+  opacity: 0.8;
+  flex-shrink: 0; /* Evita que el icono se encoja */
+}
+
+.help-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.help-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.help-content p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.help-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(45deg, var(--telegram-blue-gradient-start), var(--telegram-blue-gradient-end));
+  color: white;
+  padding: 8px 14px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all var(--transition-speed) ease;
+  box-shadow: 0 2px 8px rgba(0, 136, 204, 0.3);
+}
+
+.help-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 136, 204, 0.4);
+}
+
+/* --- Contenedor de Notificaciones Moderno --- */
 #notification-container {
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -364,14 +381,15 @@ body {
 }
 
 .notification {
-  background-color: var(--bg-secondary);
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
   color: var(--text-primary);
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px var(--shadow-color);
+  padding: 16px 20px;
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-card);
   border-left: 4px solid var(--netflix-red);
   min-width: 250px;
-  animation: slide-in 0.3s ease-out;
+  animation: slide-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animación más elástica */
   transition: all 0.3s ease;
 }
 
@@ -389,26 +407,16 @@ body {
 
 .notification.hiding {
   opacity: 0;
-  transform: translateX(100%);
+  transform: translateX(100%) scale(0.8);
 }
 
 @keyframes slide-in {
   from {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(100%) scale(0.8);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
   }
-}
-
-/* --- Animaciones --- */
-@keyframes glow {
-  from { text-shadow: 0 0 5px var(--netflix-red); }
-  to { text-shadow: 0 0 10px var(--netflix-red), 0 0 15px var(--netflix-red); }
-}
-
-.logo span {
-    animation: glow 2s infinite alternate;
 }
