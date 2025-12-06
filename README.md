@@ -46,9 +46,7 @@
 
 *   🔑 **Acceso instantáneo con un código ID**: Entra a Netflix en un clic. Olvídate de contraseñas.
 *   🛡️ **Bypass automático de restricciones**: Omite límites de dispositivos y bloqueos geográficos sin esfuerzo.
-*   🔒 **Protección de sesión**: Sesión estable durante 3 días desde que se crea la sesión con Session Creator.
-*   ⌛ **Estado del código ID**: Antes de entrar te marca el tiempo restante de la sesión.
-
+*   🔒 **Protección de sesión**: Sesión estable desde que se crea la sesión con Session Creator.
 ---
 
 ## 📖 Sobre el Proyecto
