@@ -3,7 +3,7 @@
 <!-- ======================================= -->
 
 <!-- Título Principal -->
-<h1 align="center">Netflix Access Freedom v9.0</h1>
+<h1 align="center">Netflix Access Freedom v10.0</h1>
 
 
 <!-- Imagen Principal (Screenshot o Logo) -->
@@ -20,7 +20,7 @@
   <img src="https://img.shields.io/badge/Netflix-E50914?style=for-the-badge&logo=netflix&logoColor=white" alt="Netflix">
   <img src="https://img.shields.io/badge/Chrome_y_navegadores_del_mismo_motor-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Chrome y navegadores del mismo motor">
   <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License">
-  <img src="https://img.shields.io/badge/version-9.0-blue.svg?style=for-the-badge" alt="Version">
+  <img src="https://img.shields.io/badge/version-10.0-blue.svg?style=for-the-badge" alt="Version">
 </p>  
 
 
@@ -38,7 +38,7 @@
 
 | Acceso gratis con Código ID | Crea Sesiones ID (extensión exclusiva para el creador)  |
 | :---: | :---: |
-| ![Image](https://github.com/user-attachments/assets/171f3d79-c778-495d-9eb7-b326ea36453b) | ![Image](https://github.com/user-attachments/assets/5b7f9856-9e82-4e88-b1b3-e12b85cd9911) |
+| ![Image](https://github.com/user-attachments/assets/021551db-5a20-4136-b9c5-6e6e4a1ead2e) | ![Image](https://github.com/user-attachments/assets/fc829677-a4b1-4926-a6c0-3d3be4348a32) |
 
 ---
 
