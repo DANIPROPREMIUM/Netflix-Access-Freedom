@@ -17,7 +17,6 @@
   /* Fondo y Contenedores - Tonos más suaves y profundos */
   --bg-primary: #0f0f0f; /* Un negro más suave */
   --bg-card: rgba(20, 20, 20, 0.75); /* Fondo semitransparente para glassmorphism */
-  --bg-input: rgba(255, 255, 255, 0.08); /* Input más sutil */
   --bg-button-hover: rgba(255, 255, 255, 0.15);
   --bg-help-card: rgba(0, 136, 204, 0.1); /* Fondo sutil para la tarjeta de ayuda */
 
@@ -53,7 +52,7 @@
 
 body {
   width: 400px; /* Ligeramente más ancho para un mejor balance */
-  min-height: 450px; /* Altura mínima reducida para menos margen */
+  min-height: 420px; /* Altura mínima reducida al quitar el mensaje */
   font-family: 'Segoe UI', 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   /* Fondo con un degradado sutil para más profundidad */
   background: linear-gradient(145deg, #1a1a1a, var(--bg-primary));
@@ -61,7 +60,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px; /* Reducido de 20px a 10px */
+  padding: 10px;
   overflow: hidden;
 }
 
@@ -74,7 +73,7 @@ body {
   border-radius: var(--border-radius-large);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-card);
-  padding: 20px; /* Reducido de 30px a 20px */
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,17 +91,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px; /* Reducido de 25px a 20px */
+  margin-bottom: 25px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  font-size: 56px; 
+  font-size: 72px; /* CAMBIADO: De 56px a 72px para hacerlo más grande */
   font-weight: 800;
   color: var(--netflix-red);
   letter-spacing: -1.5px;
-  margin-bottom: 15px;
+  margin-bottom: 20px; /* CAMBIADO: De 15px a 20px para dar más espacio */
   text-shadow: 0 2px 10px rgba(229, 9, 20, 0.5);
   transition: transform var(--transition-speed) ease;
 }
@@ -160,117 +159,59 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 35px; /* CAMBIO: Aumentado de 25px a 35px para más separación */
+  gap: 40px; /* Espaciado aumentado para dar más protagonismo al botón */
 }
 
-/* --- Sección de Input Rediseñada --- */
-.input-section {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.input-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  background: var(--bg-input);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-medium);
-  transition: all var(--transition-speed) ease;
-  overflow: hidden;
-}
-
-.input-wrapper:focus-within {
-  border-color: var(--border-focus);
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: var(--shadow-input-focus);
-}
-
-.input-icon {
-  color: var(--text-placeholder);
-  padding: 0 15px;
-  font-size: 16px;
-  transition: color var(--transition-speed) ease;
-}
-
-.input-wrapper:focus-within .input-icon {
-  color: var(--netflix-red);
-}
-
-#full-code-input {
-  flex-grow: 1;
-  background: transparent;
-  border: none;
-  padding: 16px 10px; /* Más padding para un área de toque mayor */
-  color: var(--text-primary);
-  font-size: 15px;
-  outline: none;
-}
-
-#full-code-input::placeholder {
-  color: var(--text-placeholder);
-}
-
-.paste-button {
-  background: transparent;
-  border: none;
-  color: var(--text-secondary);
-  padding: 0 15px;
-  cursor: pointer;
-  font-size: 18px;
-  transition: all var(--transition-speed) ease;
-  border-radius: var(--border-radius-small);
-}
-
-.paste-button:hover {
-  color: var(--text-primary);
-  background-color: var(--bg-button-hover);
-}
-
-/* --- Botón Principal con Degradado y Efectos --- */
+/* --- Botón Principal con Degradado y Efectos "SUPER ILUMINADO" --- */
 .main-button {
   background: linear-gradient(45deg, var(--netflix-red-gradient-start), var(--netflix-red-gradient-end));
   color: white;
   border: none;
-  padding: 16px 24px;
+  padding: 18px 28px; /* Ligeramente más grande y con más padding */
   border-radius: var(--border-radius-medium);
-  font-size: 16px;
-  font-weight: 700; /* Más negrita */
+  font-size: 17px; /* Texto un poco más grande */
+  font-weight: 800; /* Aún más negrita */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  transition: all var(--transition-speed) ease;
-  /* NUEVO: Sombra y brillo mejorados */
-  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4), 0 0 20px rgba(229, 9, 20, 0.3);
+  gap: 12px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición más suave y elástica */
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  /* NUEVO: Efecto de brillo pulsante */
-  animation: brilliant-glow 3s infinite ease-in-out;
+  letter-spacing: 1px; /* Más espacio entre letras */
+  /* Sombra base mejorada */
+  box-shadow: 0 8px 25px rgba(229, 9, 20, 0.5), 0 0 30px rgba(229, 9, 20, 0.4);
+  /* NUEVO: Animación de brillo más enérgica y potente */
+  animation: powerful-glow 2.5s infinite ease-in-out;
 }
 
-/* NUEVO: Animación de Brillo Pulsante para el Botón */
-@keyframes brilliant-glow {
-  0% { box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4), 0 0 20px rgba(229, 9, 20, 0.3); }
-  50% { box-shadow: 0 4px 20px rgba(229, 9, 20, 0.6), 0 0 30px rgba(229, 9, 20, 0.5); }
-  100% { box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4), 0 0 20px rgba(229, 9, 20, 0.3); }
+/* NUEVO: Animación de Brillo "Poderoso" para el Botón */
+@keyframes powerful-glow {
+  0% { 
+    box-shadow: 0 8px 25px rgba(229, 9, 20, 0.5), 0 0 30px rgba(229, 9, 20, 0.4); 
+  }
+  50% { 
+    box-shadow: 0 12px 40px rgba(255, 80, 80, 0.7), 0 0 60px rgba(229, 9, 20, 0.6); 
+  }
+  100% { 
+    box-shadow: 0 8px 25px rgba(229, 9, 20, 0.5), 0 0 30px rgba(229, 9, 20, 0.4); 
+  }
 }
 
 .main-button:hover {
-  transform: translateY(-3px);
-  /* Al hacer hover, el brillo es más intenso y estático */
-  box-shadow: 0 8px 25px rgba(229, 9, 20, 0.7), 0 0 35px rgba(229, 9, 20, 0.5);
+  transform: translateY(-5px) scale(1.05); /* Salto y escala más pronunciados */
+  /* Sombra de hover ultra intensa y vibrante */
+  box-shadow: 0 15px 35px rgba(255, 100, 100, 0.8), 0 0 50px rgba(229, 9, 20, 0.7);
   background: linear-gradient(45deg, var(--netflix-red-gradient-end), var(--netflix-red-gradient-start)); /* Invierte el degradado */
   animation-play-state: paused; /* Pausa la animación al hacer hover */
 }
 
 .main-button:active {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-button);
+  transform: translateY(-2px) scale(1.02); /* Se "hunde" menos al hacer clic, pero mantiene una ligera escala */
+  box-shadow: 0 5px 15px rgba(229, 9, 20, 0.6); /* Sombra más pequeña y contenida */
+  transition: all 0.1s ease; /* Transición instantánea para sentir el "clic" */
 }
 
 .main-button:disabled {
@@ -282,27 +223,19 @@ body {
   animation-play-state: paused; /* Pausa la animación cuando está deshabilitado */
 }
 
-.button-icon {
-  transition: transform var(--transition-speed) ease;
-}
-
-.main-button:hover .button-icon {
-  transform: rotate(10deg) scale(1.1);
-}
-
-/* --- Efecto Ripple Mejorado --- */
+/* --- Efecto Ripple Mejorado y más grande --- */
 .button-ripple {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.7); /* Ripple más brillante */
   transform: scale(0);
-  animation: ripple-animation 0.6s ease-out;
+  animation: ripple-animation 0.8s ease-out; /* Animación un poco más larga */
   pointer-events: none;
 }
 
 @keyframes ripple-animation {
   to {
-    transform: scale(4);
+    transform: scale(5); /* Ripple más grande */
     opacity: 0;
   }
 }
@@ -397,27 +330,18 @@ body {
       </div>
       <div class="extension-title-info">
         <h1>Access Freedom</h1>
-        <div class="version-badge">v9.0</div>
+        <div class="version-badge">v10.0</div>
         <div class="credit-text">BY DANIPRO PREMIUM</div>
       </div>
     </header>
 
     <!-- 2. CONTENIDO PRINCIPAL -->
     <main class="main-content">
-      <div class="input-section">
-        <div class="input-wrapper">
-          <i class="fas fa-key input-icon"></i>
-          <input type="text" id="full-code-input" placeholder="Pega tu código ID aquí" autocomplete="off">
-          <button id="paste-button" class="paste-button" title="Pegar desde el portapapeles">
-            <i class="fas fa-paste"></i>
-          </button>
-        </div>
-        <button id="restore-session" class="main-button">
-          <i class="fas fa-play button-icon"></i>
-          <span>Acceder a Netflix</span>
-          <div class="button-ripple"></div>
-        </button>
-      </div>
+      
+      <!-- Botón principal "Super Iluminado" -->
+      <button id="restore-session" class="main-button">
+        <span>Acceder a Netflix</span>
+      </button>
       
       <!-- Botón de Telegram centrado -->
       <div class="telegram-container">
