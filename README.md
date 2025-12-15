@@ -75,8 +75,8 @@
 
 ### Netflix Access Freedom v10
 Ya no hace falta pegar el código manualmente.
-1️⃣ Completa el acortador y pulsa **Copy Paste**
-2️⃣ Pulsa **Acceder a Netflix**
+1. Completa el acortador y pulsa **Copy Paste**
+2. Pulsa **Acceder a Netflix**
 
 ---
 
