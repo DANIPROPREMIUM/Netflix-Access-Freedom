@@ -74,9 +74,8 @@
 ## 🎯 Cómo Funciona
 
 ### Para acceder a Netflix
-1.  Haz clic en el ícono de la extensión.
-2.  Pega tu código ID de acceso en el rentángulo en blanco.
-3.  Presiona **"Acceso a Netflix"** y listo.
+1.  Click en: **"Copy Paste"** tras completar el acortador.
+2.  Presiona **"Acceder a Netflix"** y listo.
 
 ---
 
