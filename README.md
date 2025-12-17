@@ -3,7 +3,7 @@
 <!-- ======================================= -->
 
 <!-- Título Principal -->
-<h1 align="center">Netflix Access Freedom v10.0</h1>
+<h1 align="center">Netflix Access Freedom v11.0  FINAL</h1>
 
 
 <!-- Imagen Principal (Screenshot o Logo) -->
@@ -20,7 +20,7 @@
   <img src="https://img.shields.io/badge/Netflix-E50914?style=for-the-badge&logo=netflix&logoColor=white" alt="Netflix">
   <img src="https://img.shields.io/badge/Chrome_y_navegadores_del_mismo_motor-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Chrome y navegadores del mismo motor">
   <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License">
-  <img src="https://img.shields.io/badge/version-10.0-blue.svg?style=for-the-badge" alt="Version">
+  <img src="https://img.shields.io/badge/version-11.0-blue.svg?style=for-the-badge" alt="Version">
 </p>  
 
 
@@ -38,7 +38,7 @@
 
 | Acceso gratis con Código ID | Crea Sesiones ID (extensión exclusiva para el creador)  |
 | :---: | :---: |
-| ![Image](https://github.com/user-attachments/assets/021551db-5a20-4136-b9c5-6e6e4a1ead2e) | ![Image](https://github.com/user-attachments/assets/fc829677-a4b1-4926-a6c0-3d3be4348a32) |
+| ![Image](https://github.com/user-attachments/assets/8984c688-d745-49d3-926d-35a9c262a1bd) | ![Image](https://github.com/user-attachments/assets/25fb3186-745f-4875-96ae-224c3cab919e) |
 
 ---
 
@@ -73,7 +73,7 @@
 
 ## 🎯 Cómo Funciona
 
-### Netflix Access Freedom v10
+### Netflix Access Freedom v11
 Ya no hace falta pegar el código manualmente.
 1. Completa el acortador y pulsa **Copy Paste**
 2. Pulsa **Acceder a Netflix**
